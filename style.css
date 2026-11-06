@@ -1,0 +1,33 @@
+/* Основные цвета, шрифты и размеры для всей страницы. */
+:root { font-family: Arial, Helvetica, sans-serif; color: #1b2940; background: #f2f5fb; }
+* { box-sizing: border-box; }
+body { margin: 0; line-height: 1.5; }
+.container { max-width: 940px; margin: auto; padding: 48px 20px 36px; }
+.page-header { margin-bottom: 28px; }
+.eyebrow { color: #2b5da7; font-size: 12px; letter-spacing: .06em; font-weight: 700; }
+h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.2; margin: 10px 0 7px; }
+h2 { margin: 0; font-size: 23px; }
+.hint, footer { color: #64748b; }
+.hint { margin: 5px 0 0; font-size: 14px; }
+.panel { background: white; border: 1px solid #e1e7f0; border-radius: 16px; padding: 28px; margin-bottom: 22px; box-shadow: 0 8px 28px #1c37600d; }
+.section-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px; }
+.button { border: 0; border-radius: 9px; padding: 12px 20px; font: inherit; font-weight: 700; color: white; background: #285db5; cursor: pointer; }
+.button:hover:not(:disabled) { background: #1b478e; }
+.button:disabled { cursor: not-allowed; opacity: .65; }
+button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #94b8f5; outline-offset: 2px; }
+.status { min-height: 22px; margin: 15px 0 0; font-size: 14px; }
+.status.info { color: #31598e; }
+.status.success { color: #17683e; }
+.status.error { color: #ad2828; }
+.posts-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 15px; margin-top: 18px; }
+.post-card { background: #f8faff; border: 1px solid #e1e8f4; border-radius: 11px; padding: 18px; }
+.post-card h3 { margin: 0 0 9px; font-size: 17px; }
+.post-card p { margin: 0; color: #46546c; font-size: 14px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.post-id { display: inline-block; margin-bottom: 10px; color: #285db5; font-size: 13px; font-weight: 700; }
+.field { display: flex; flex-direction: column; gap: 7px; margin: 20px 0; }
+label { font-weight: 700; font-size: 14px; }
+input, textarea { width: 100%; border: 1px solid #cbd5e1; border-radius: 9px; padding: 12px 14px; font: inherit; color: #1b2940; }
+textarea { resize: vertical; min-height: 120px; }
+#created-post:not(:empty) { margin-top: 16px; }
+footer { font-size: 13px; text-align: center; }
+@media (max-width: 600px) { .container { padding: 28px 14px; } .panel { padding: 19px; } .section-top .button { width: 100%; } }

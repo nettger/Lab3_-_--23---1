@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Доска публикаций — лабораторная № 3</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- defer запускает скрипт после разбора HTML -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="page-header">
+      <h1>Доска публикаций</h1>
+    </header>
+    <section class="panel" aria-labelledby="posts-title">
+      <div class="section-top">
+        <div><h2 id="posts-title">Публикации</h2><p class="hint">Загрузите пять записей с сервера.</p></div>
+        <button id="load-button" type="button" class="button">Загрузить публикации</button>
+      </div>
+      <!-- aria-live сообщает пользователю об изменении состояния запроса -->
+      <p id="load-status" class="status" role="status" aria-live="polite"></p>
+      <!-- карточки добавляются сюда динамически через JavaScript -->
+      <div id="posts-list" class="posts-list"></div>
+    </section>
+    <section class="panel" aria-labelledby="create-title">
+      <h2 id="create-title">Новая публикация</h2>
+      <p class="hint">Оба поля обязательны. Лишние пробелы по краям удаляются.</p>
+      <form id="post-form" novalidate>
+        <div class="field"><label for="post-title">Заголовок</label><input id="post-title" name="title" type="text" placeholder="Моя первая публикация"></div>
+        <div class="field"><label for="post-body">Текст</label><textarea id="post-body" name="body" rows="5" placeholder="Введите текст публикации..."></textarea></div>
+        <button id="create-button" type="submit" class="button">Создать публикацию</button>
+      </form>
+      <p id="create-status" class="status" role="status" aria-live="polite"></p>
+      <!-- после POST здесь появится ответ с заголовком и ID записи -->
+      <div id="created-post"></div>
+    </section>
+  </main>
+</body>
+</html>
